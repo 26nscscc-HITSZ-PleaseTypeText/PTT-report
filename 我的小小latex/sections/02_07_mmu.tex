@@ -1,0 +1,11 @@
+\subsection{地址翻译设计}
+
+\subsubsection{MMU 模块}
+
+\texttt{mmu} 为取指与访存提供双通道翻译：根据 CSR 中的 CRMD/DMW/ASID 等配置，在直接映射、DMW 窗口与 TLB 页表映射之间选择路径，并向 IFU/LSU 返回物理地址、MAT（cached/uncached）属性与例外信息。
+
+\subsubsection{TLB 与微 TLB}
+主 TLB 为 32 项全相联结构，提供指令地址与数据地址两个查询口（当拍返回），并支持 \texttt{tlbsrch}/\texttt{tlbrd}/\texttt{tlbwr}/\texttt{tlbfill}/\texttt{invtlb} 维护端口。
+在主 TLB 前插入 I/D 各 8 项的 L1 微 TLB，加速常用 4\,KB 页翻译；大页等情形透传主 TLB。
+
+TLB 相关例外（TLBR、PIL/PIS/PIF、PPI、PME 等）在翻译通路产生后附着于对应取指/访存指令，最终在提交级写入 BADV/ESTAT 等 CSR，并跳转 EENTRY 或 TLBRENTRY。

@@ -1,0 +1,57 @@
+\section{设计结果}
+
+\subsection{设计交付物说明}
+
+\begin{verbatim}
+|- score.xlsx              Excel：功能/性能测试得分
+|- design.pdf              PDF：设计文档
+|- .gitlab-ci.yml          CI/CD 配置
+|-- src/
+|    |-- mycpu/            我们的 CPU 完整源码
+|    |    |-- xilinx_ip/   我们的 CPU 没有使用 IP 核 
+|    |-- vivado_cannot/    无
+|    |-- perf_clock.json   性能测试 CPU 主频，75MHZ
+|-- bit/                   各项测试生成的 bit 文件
+|-- show/                  决赛展示内容（暂时为空）
+\end{verbatim}
+
+\subsection{设计演示结果}
+
+% \subsubsection{内核加载与启动}
+
+%在龙芯实验板上烧录 SPI Flash 中的 U-Boot 后，编程包含 \texttt{core\_top} 的 SoC 比特流。
+%串口配置为 115200 8N1。于 U-Boot 中配置网络，使用 TFTP 将镜像加载到 \texttt{0xa3000000}，再执行 \texttt{bootelf} 启动：
+
+%\begin{itemize}
+ % \item \textbf{Linux}：加载适配 LA32R 的 \texttt{vmlinux}，设置 \texttt{console=ttyS0,115200} 等启动参数，引导至 shell（提示符 \texttt{/ \#}）；
+ % \item \textbf{uCore}：加载 \texttt{ucore-kernel-initrd}（链接入口 \texttt{0xA0000000}），引导至 uCore 提示符。
+%\end{itemize}
+
+%仿真侧同样验证了 U-Boot $\rightarrow$ Linux 路径可达 shell。板上演示截图待补充。
+
+%\figplaceholder{fig:uboot_linux}{U-Boot 启动 Linux 过程（串口日志）}
+
+%\figplaceholder{fig:ucore}{U-Boot 启动 uCore 过程（串口日志）}
+
+以下是我们的初赛成绩：
+
+\begin{table}[H]
+\centering
+\caption{初赛功能与性能分（ CI 的结果）}
+\label{tab:perf}
+\small
+\begin{tabular}{lll}
+\toprule
+项目 & 结果 & 说明 \\
+\midrule
+功能分 & \textbf{100.000000} & 58/58 点（最差 seed）；3/3 seed 通过 \\
+IPC 比值 & \textbf{1.934633120} & - \\
+系统计数器比值 & \textbf{4.438258572} & - \\
+性能测试用例 & 20/20 PASS & - \\
+FPGA 性能实现频率 & \textbf{75.001875\,MHz} & \texttt{cpu\_clk} WNS $+0.052$\,ns \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+

@@ -1,0 +1,9 @@
+\section{设计简介}
+
+我们的CPU使用 Verilog 实现了基于 LoongArch32R（LA32R）指令集的\textbf{乱序双发射}处理器（我们称其为“意味核”）。
+意味核前端用块（最多四条指令）做取指单位，并用 FTQ/IB 把预测、取指、后端拆开，配备 uBTB、fallback BTB、FTB、TAGE 与 RAS 组成的多级分支预测；
+后端以 ROB 编号作为重命名标签，将保留站按指令类型拆成三类（ALU/访存/乘除杂项），支持每拍最多两条指令提交。
+存储包含 16\,KB Icache、16\,KB Dcache与 128\,KB L2 cache，以cache一行为单位经 AXI 与 SoC 外设通信。
+功能上覆盖 LA32R 用户态/特权态主要指令（含 \texttt{ibar}/\texttt{dbar}/\texttt{preld} ），
+%可通过 U-Boot 启动 uCore 与 Linux。
+性能测试上板实现频率为 \textbf{75\,MHz}（ WNS $+0.052$\,ns）。
