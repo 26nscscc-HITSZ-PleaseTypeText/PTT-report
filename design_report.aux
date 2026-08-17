@@ -1,0 +1,126 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {一、}设计简介}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {二、}设计方案}{2}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}总体设计思路}{2}{subsection.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces CPU 设计架构图\relax }}{2}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:cpuarch}{{1}{2}{CPU 设计架构图\relax }{figure.caption.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 主要结构容量\relax }}{3}{table.caption.2}\protected@file@percent }
+\newlabel{tab:capacity}{{1}{3}{主要结构容量\relax }{table.caption.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}指令实现}{3}{subsubsection.2.1.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces 指令实现\relax }}{3}{table.caption.3}\protected@file@percent }
+\newlabel{tab:inst}{{2}{3}{指令实现\relax }{table.caption.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}CSR 实现}{3}{subsubsection.2.1.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces 主要 CSR\relax }}{4}{table.caption.4}\protected@file@percent }
+\newlabel{tab:csr}{{3}{4}{主要 CSR\relax }{table.caption.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}例外与中断}{4}{subsubsection.2.1.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces 例外与中断类型\relax }}{4}{table.caption.5}\protected@file@percent }
+\newlabel{tab:excp}{{4}{4}{例外与中断类型\relax }{table.caption.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.4}地址翻译模式}{4}{subsubsection.2.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}前端设计}{5}{subsection.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 前端架构图\relax }}{5}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:frontend}{{2}{5}{前端架构图\relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}分支预测器}{5}{subsubsection.2.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}取指目标队列 FTQ}{6}{subsubsection.2.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}IFU 与取指流水}{6}{subsubsection.2.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}指令缓冲（IB）模块设计}{6}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}后端设计}{7}{subsection.2.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 后端架构图\relax }}{7}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:backend}{{3}{7}{后端架构图\relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}译码与重命名}{7}{subsubsection.2.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}分发与保留站}{7}{subsubsection.2.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3}执行单元}{8}{subsubsection.2.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.4}ROB 与提交}{8}{subsubsection.2.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.5}统一冲刷与精确例外}{8}{subsubsection.2.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}AXI Line Bridge}{8}{subsection.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Cache 与访存层次}{9}{subsection.2.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 访存架构图\relax }}{9}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:memory}{{4}{9}{访存架构图\relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.1}一级指令缓存}{9}{subsubsection.2.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.2}一级数据缓存}{9}{subsubsection.2.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.3}统一二级缓存}{10}{subsubsection.2.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.4}STQ 与 Store Buffer}{10}{subsubsection.2.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7}地址翻译设计}{10}{subsection.2.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.7.1}MMU 模块}{10}{subsubsection.2.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.7.2}主 TLB 与微 TLB}{10}{subsubsection.2.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.8}SoC 设计}{10}{subsection.2.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces soc架构图\relax }}{11}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:soc}{{5}{11}{soc架构图\relax }{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.8.1}互连、时钟与复位}{11}{subsubsection.2.8.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces SoC 主要时钟\relax }}{11}{table.caption.10}\protected@file@percent }
+\newlabel{tab:soc_clock}{{5}{11}{SoC 主要时钟\relax }{table.caption.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.8.2}地址分配}{12}{subsubsection.2.8.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces SoC 主要物理地址映射\relax }}{12}{table.caption.11}\protected@file@percent }
+\newlabel{tab:addr}{{6}{12}{SoC 主要物理地址映射\relax }{table.caption.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.8.3}外设与中断}{12}{subsubsection.2.8.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces CPU 外部中断映射\relax }}{12}{table.caption.12}\protected@file@percent }
+\newlabel{tab:interrupt}{{7}{12}{CPU 外部中断映射\relax }{table.caption.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.9}U-Boot 启动软件}{12}{subsection.2.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.9.1}板级适配}{13}{subsubsection.2.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.9.2}TFTP 启动 Linux}{13}{subsubsection.2.9.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces uboot启动linux\relax }}{13}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:uboot}{{6}{13}{uboot启动linux\relax }{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.10}Linux 系统}{13}{subsection.2.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces GUI\relax }}{14}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:GUI}{{7}{14}{GUI\relax }{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces 软件生态\relax }}{14}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:软件生态}{{8}{14}{软件生态\relax }{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.10.1}GUI展示}{15}{subsubsection.2.10.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces GUI 桌面\relax }}{15}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:GUI 桌面}{{9}{15}{GUI 桌面\relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces LCD GUI\relax }}{15}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:LCD GUI}{{10}{15}{LCD GUI\relax }{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces LCD Mouse\relax }}{16}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:LCD Mouse}{{11}{16}{LCD Mouse\relax }{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces LCD Time\relax }}{16}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:LCD Time}{{12}{16}{LCD Time\relax }{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces 菜单栏\relax }}{16}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:菜单栏}{{13}{16}{菜单栏\relax }{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces 鼠标拖拽\relax }}{17}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:鼠标拖拽}{{14}{17}{鼠标拖拽\relax }{figure.caption.21}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.10.2}软件生态}{17}{subsubsection.2.10.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces 应用总览\relax }}{17}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:应用总览}{{15}{17}{应用总览\relax }{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces 中文输入法\relax }}{18}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:中文输入法}{{16}{18}{中文输入法\relax }{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces 小AI对话\relax }}{18}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:小AI对话}{{17}{18}{小AI对话\relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces 执行代码\relax }}{19}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:执行代码}{{18}{19}{执行代码\relax }{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces 文件管理系统\relax }}{19}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:文件管理系统}{{19}{19}{文件管理系统\relax }{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces 贪吃蛇\relax }}{20}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:贪吃蛇}{{20}{20}{贪吃蛇\relax }{figure.caption.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces 俄罗斯方块\relax }}{20}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:俄罗斯方块}{{21}{20}{俄罗斯方块\relax }{figure.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces NANO\relax }}{21}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:NANO}{{22}{21}{NANO\relax }{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces 2048\relax }}{21}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:2048}{{23}{21}{2048\relax }{figure.caption.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces 3D渲染\relax }}{22}{figure.caption.31}\protected@file@percent }
+\newlabel{fig:3D渲染}{{24}{22}{3D渲染\relax }{figure.caption.31}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {三、}设计结果}{22}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}设计交付物}{22}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}CPU 功能与性能结果}{22}{subsection.3.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces CPU 功能与性能测试结果\relax }}{22}{table.caption.32}\protected@file@percent }
+\newlabel{tab:perf}{{8}{22}{CPU 功能与性能测试结果\relax }{table.caption.32}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}linux启动}{23}{subsection.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces linux启动\relax }}{23}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:linux启动}{{25}{23}{linux启动\relax }{figure.caption.33}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {四、}参考设计说明}{23}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {五、}参考文献}{24}{section.5}\protected@file@percent }
+\gdef \@abspage@last{24}

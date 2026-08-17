@@ -1,0 +1,45 @@
+\section{参考设计说明}
+
+\begin{enumerate}
+  \item \textbf{前端：满洋学长 / 404 NOT FOUND 队}\\
+  我们重点参考了满洋学长的前端与分支预测相关设计（含 TAGE 等思路）
+  %真的够吃好几届！
+  我们结合本核负载对表项容量、历史长度与训练时机进行了调整，将分支预测率提高到98\%，这对多级流水的IPC有极大好处。\\
+  源代码 URL：\url{https://github.com/HITSZ-NSCSCC22/mycpu}
+
+  \item \textbf{*重点思路参考：Cache-HIT-100 队（朱炫翰、蔡源航、房效民、林亮宇）}\\
+  %Cache-HIT-100团队给予了我们十分十分大的帮助！！！
+  从前端来说，主要参考其解耦前端结构（BPU / FTB / FTQ / IFU / 预译码等）以及相关报告中的取指与预测流水划分，并完成了学长未完成的ubtb。
+  
+  %从前后端的解耦来说，点明了inst buffer的思路！！当时我们还不是学的很深入
+  
+  从后端来说，Cache-HIT-100团队已经具备了乱序的能力。只差唤醒。所以我们着重借鉴了ROB、RS等一系列设计，实现了本乱序核。\\
+  
+  %还有一点非常重要，大队长朱炫翰亲自教了我们要多看前人的设计，像mariver、满洋等！真想让朱学长再带我们冲一次。
+  
+  源代码 URL：\url{https://gitee.com/zxhzxhPhD/cache-hit-100-so-c}
+  
+  %不过，这个仓库是私有的，自己联系咱校的大队长朱炫翰�:)
+
+  \item \textbf{后端、soc与linux：马家沟河队 Mariver（cpucore-mariver）}\\
+  参考其乱序后端组织思路，包括重命名、分发、保留站/发射、ROB 写回与提交等阶段划分及执行通路设计。因为其为 mips 架构，所以我们迁移适配到 LA32R 与本核接口。
+  
+  同时他们的soc与linux也给了我们非常大的启发。包括中文输入法、GUI显示、LCD、3D 渲染等。\\
+  %而且其ROB的队列设计太棒了！解决了PRF等的设计问题（解决就是我们不用PRF！）\\
+  源代码 URL：\url{https://github.com/HIT-MaRiver-mips/cpucore-mariver}\\
+  设计报告：\url{https://github.com/HIT-MaRiver-mips/report-mariver}
+
+  \item \textbf{Uboot：JIT}\\
+  JIT 团队将 uboot 的 tftp 内核加载速度提高到了 500KB/s ，参考他们的优化补丁，我们将其移植到了 uboot v2026 上\\
+  源代码 URL：\url{https://github.com/nscscc24-jit-thu/u-boot-mainline}
+  
+  \item \textbf{openla500}\\
+  主要参考流水线异常处理、地址翻译与 uncache 访问相关思路；乘除单元与 AXI 访问次序方面亦有借鉴。其中处理定时器中断的思路被我们用于解决功能测试第 49 个测试点。\\
+  源代码 URL：\url{https://gitee.com/loongson-edu/open-la500}
+  
+  %\item \textbf{一个娱乐的游戏}\\
+  %该游戏列在这里是因为这个给我们给予了许多欢笑与慰藉。没错，这个游戏是我们做的\verb|(*^▽^*)| 。
+  %源代码 URL：\url{https://globalgamejam.org/games/2026/baimannailong-9}
+  
+
+\end{enumerate}

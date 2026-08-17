@@ -1,0 +1,13 @@
+\subsection{地址翻译设计}
+
+\subsubsection{MMU 模块}
+
+MMU 为 IFU 与 LSU 提供独立翻译通路，根据 CRMD、DMW0/1、ASID 和访问类型在直接地址、直接映射窗口与 TLB 页映射之间选择。返回结果包括物理地址、MAT（cached/uncached）、页权限和例外信息。
+
+\subsubsection{主 TLB 与微 TLB}
+
+主 TLB 为 32 项全相联结构，具有指令、数据两个查询口，支持 4\,KB 与 4\,MB 页，并提供 \texttt{tlbsrch}、\texttt{tlbrd}、\texttt{tlbwr}、\texttt{tlbfill} 和 \texttt{invtlb} 维护端口。
+
+取指和访存通路前各设置 8 项微 TLB，只缓存常用 4\,KB 翻译。微 TLB 命中可在当前拍完成；未命中时查询主 TLB，结果由管理器登记并在下一拍交付请求方。大页请求直接使用主 TLB 结果。
+
+TLBR、PIL/PIS/PIF、PPI、PME 与地址类例外随对应指令进入 ROB，提交级更新 BADV、ESTAT 等 CSR，并重定向到 EENTRY 或 TLBRENTRY。TLB 维护和 CSR 地址空间切换均在提交级串行完成，防止年轻指令观察到部分更新状态。

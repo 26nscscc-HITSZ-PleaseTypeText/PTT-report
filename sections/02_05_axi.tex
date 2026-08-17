@@ -1,0 +1,12 @@
+\subsection{AXI Line Bridge}
+
+CPU 顶层提供 32 位地址、32 位数据、4 位 ID 的 AXI 主接口，包含 AR/R/AW/W/B 五通道，并保留 SoC 互连所需的写数据 ID。\texttt{axi\_line\_bridge} 位于 L2 与该接口之间，将 32\,B Cache 行转换为 8 拍、每拍 32 位的 INCR burst。
+
+\begin{itemize}
+  \item \textbf{行读取}：\texttt{ARLEN}=7。指令和数据读取分别使用 ID 0/1，最多允许两路读取在途，R 通道按 ID 分流；
+  \item \textbf{行写回}：\texttt{AWLEN}=7，上游分段送入整行数据，桥接器缓存并产生 8 拍写突发，最多允许两笔写响应在途；
+  \item \textbf{Uncached 访问}：根据字节、半字或字访问设置 \texttt{ARSIZE}/\texttt{AWSIZE} 和写掩码，设备写等待 B 响应后才完成；
+  \item \textbf{顺序约束}：存在未完成写事务时限制新的读请求，避免脏行写回与同地址 refill 发生可见次序倒置。
+\end{itemize}
+
+当前桥接器接收但不解释 \texttt{RRESP} 与 \texttt{BRESP}，因此不会把 AXI slave error 转换为处理器总线例外。这是现有接口的功能边界。CPU/uncore 跨时钟域由 SoC 中的 AXI Clock Converter 完成，不在核内桥接器中处理。
