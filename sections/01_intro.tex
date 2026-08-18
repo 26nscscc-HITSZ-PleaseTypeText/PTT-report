@@ -4,4 +4,4 @@
 
 存储系统由 16\,KB ICache、16\,KB DCache、统一 128\,KB L2 Cache、Store Queue 与 Store Buffer 组成，经 32 位 AXI 主接口访问 SoC。特权部分实现 CSR、精确例外与中断、直接地址、DMW 和 TLB 地址翻译，可运行 U-Boot 与 Linux。
 
-CPU 最高主频达 75\,MHz，时序结果为 WNS $+0.052$\,ns。完整 SoC 的 CPU 工作在 60 MHZ下，并集成 128\,MB DDR3、UART、SPI、NAND、以太网、VGA、LCD、PS/2、I2C 与板级控制外设。系统采用定制 U-Boot 2026.07，经 TFTP 以高达 500 KB/s 加载 Linux 5.14.0-rc2，已在当前 SoC 上启动至 BusyBox Shell。同时我们的 Linux 支持较完善的 GUI 设计与丰富的软件生态。 
+CPU 最高主频达 80\,MHz，时序结果为 WNS $+0.023$\,ns， IPC 加速比 2.492 ，系统计数器比值 6.035 。完整 SoC 的 CPU 工作在 60 MHZ下，并集成 128\,MB DDR3、UART、SPI、NAND、以太网、VGA、LCD、PS/2、I2C 与板级控制外设。系统采用定制 U-Boot 2026.07，经 TFTP 以高达 500 KB/s 加载 Linux 5.14.0-rc2，已在当前 SoC 上启动至 BusyBox Shell。同时我们的 Linux 支持较完善的 GUI 设计与丰富的软件生态。 
